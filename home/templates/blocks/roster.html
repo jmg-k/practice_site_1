@@ -1,0 +1,7 @@
+{% load wagtailimages_tags %}
+
+{% for artist in value.artists %}
+{% if artist.image %}
+    <div class="artist"><a href="{{artist.link}}">{% image artist.image width-120 %}</a></div>
+{% endif %} 
+{% endfor %}

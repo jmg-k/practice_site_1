@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load wagtailsettings_tags %}
+{% get_settings %}
+
+{% block content %}
+
+<div class="container">
+    <div class="item socials social-wrapper">
+
+        {% for social in page.social_images.all %}
+        <div class="social_link"><a href="{{social.link}}">{% image social.social_image width-25 %}</a></div>
+        {% endfor %}
+
+    </div>
+    <div class="item header link-wrapper">
+        <div class="item header_l">
+            <div class="text_link1"><a class="text_link" href="#new_releases">NEW RELEASES</a></div>
+            <div class="text_link2"><a class="text_link" href="#artists">ARTISTS</a></div>
+            <div class="text_link3"><a class="text_link" href="https://circus-records.myshopify.com/">US STORE</a></div>
+        </div>
+        <div class="item header_logo">
+            <div class="image logo_big"><img src="{% static 'image/circus_logo.png' %}" height="140"></div>
+            <div class="image logo_small"><img src="{% static 'image/circus_logo.png' %}" height="100"></div>
+        </div>
+        <div class="item header_r">
+            <div class="text_link4"><a class="text_link" href="https://circusrecords.databeats.com/store">UK STORE</a></div>
+            <div class="text_link5"><a class="text_link" href="#contact">CONTACT US</a></div>
+            <div class="text_link6"><a class="text_link" href="https://app.hive.co/l/xwag4">SUBSCRIBE</a></div>
+        </div>
+    </div>
+    <div class="item dropdown-wrapper">
+
+        <div class="item dropdown-menu">
+            <div onclick="menuAni(this); dropDown()" class="dropbtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#new_releases">NEW RELEASES</a>
+                <a href="#artists">ARTISTS</a>
+                <a href="#">US STORE</a>
+                <a href="#">UK STORE</a>
+                <a href="#contact">CONTACT US</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="item carousel slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+
+        {% for slide in page.carousel_images.all %}
+        <div class="mySlides fade">
+            <div><a href="https://open.spotify.com/playlist/3SLLLQx1pVHh5y62OufTjY">{% image slide.carousel_image scale-100 class="responsive_banner" %}</a></div>
+        </div>
+        {% endfor %}
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <!-- The dots/circles -->
+    <div class="item dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <div id="new_releases" class="item spotify_title">
+        <h3>LISTEN NOW</h3> 
+        <h2>NEW RELEASES</h2> 
+    </div>
+    <div class="item spotify spotify-wrapper">
+        <iframe class="player" style="border-radius:15px" src="https://open.spotify.com/embed/playlist/3SLLLQx1pVHh5y62OufTjY?utm_source=generator" 
+        width="" height="450" frameBorder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    <div id="artists" class="item roster_title">
+        <h3>OUR ROSTER</h3>
+        <h2>ARTISTS</h2>
+    </div>
+    <div class="item roster_grid">
+        <div class="item"></div>
+        <div class="item roster roster-wrapper">
+            {% for block in page.roster %}
+            {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="item"></div>
+    </div>
+    <div id="contact" class="item contact_title">
+        <h3>LET'S TALK</h3>
+        <h2>CONTACT US</h2>
+    </div>
+    <div class="item">
+        <form class="contact_grid" action="{% pageurl page %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="contact_item field-{{field.name}}">{% render_field field placeholder=field.name %}</div>
+            {% endfor %}
+            <input type="submit" class="button contact_item contact_button" value="submit">
+        </form>
+    </div>
+    <div class="item"><hr class="solid"></div>
+    <div class="item footer_grid">
+        <div class="item footer_item address">
+            <div class="foot_title">ADDRESS</div>
+            <div class="foot_txt"><b>CIRCUS RECORDS LTD.</b></div>
+            <div class="foot_txt">17 Chocolate Studios</div>
+            <div class="foot_txt">7 Shepherdess Place</div>
+            <div class="foot_txt">London N1 7LJ</div>
+        </div>
+        <div class="item footer_item demos">
+            <div class="foot_title">DEMOS</div>
+            <div class="foot_txt">We accept demo submissions via LabelRadar only</div>
+            <br>
+            <a href="https://www.labelradar.com/labels/circusrecords/profile" class="button">submit</a>
+        </div>
+        <div class="item footer_item links">
+            <div class="foot_title">FOLLOW</div>
+            <div class="item foot_social_wrapper">
+                {% for social in page.social_images.all %}
+                <div class="social_link"><a href="{{social.link}}">{% image social.social_image width-25 %}</a></div>
+                {% endfor %}
+            </div>
+            <div class="store_item"><a class="store_link" href="https://circus-records.myshopify.com/">US STORE</a></div>
+            <div class="store_item"><a class="store_link" href="https://circusrecords.databeats.com/store">UK STORE</a></div>
+        </div> 
+        <div class="item footer_item subscribe">
+            <div class="foot_title">SUBSCRIBE</div>
+            <div><a class="signup" href="https://app.hive.co/l/xwag4">SIGN UP NOW</a></div>
+        </div>
+    </div>
+    <div class="item credits">
+        <div class="foot_txt">Website by JMGK</div>
+    </div>
+</div>
+
+{% endblock content %}

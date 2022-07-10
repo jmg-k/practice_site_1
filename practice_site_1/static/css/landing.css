@@ -1,0 +1,23 @@
+.landing_container {
+    display: grid;
+    grid-template-rows: 100px 50px 300px;
+}
+
+.landing_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.thank_you {
+    display: flex;
+    justify-content: center;
+}
+
+.thank_you_text {
+    font-family: acrom;
+}
+
+.back_to_site {
+    display: flex;
+    justify-content: center;
+}

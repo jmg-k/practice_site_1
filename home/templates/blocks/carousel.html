@@ -1,0 +1,20 @@
+{% load wagtailimages_tags %}
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      {% image value.slides[0].image width-500 %}
+      <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://circus-records.co.uk/wp-content/uploads/2020/05/CR0536-2400x800-new-website-header.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="https://circus-records.co.uk/wp-content/uploads/2020/05/2400x800-new-website-header-20.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+  </div>
