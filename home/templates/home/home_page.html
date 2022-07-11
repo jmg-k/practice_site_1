@@ -96,12 +96,13 @@
         <h3>LET'S TALK</h3>
         <h2>CONTACT US</h2>
     </div>
-    <div class="item">
-        <form class="contact_grid" action="{% pageurl page %}" method="POST">
+    <div class="item" id="talk">
+        <form class="contact_grid" id="post-form" action="{% pageurl page %}" method="POST">
             {% csrf_token %}
             {% for field in form %}
             <div class="contact_item field-{{field.name}}">{% render_field field placeholder=field.name %}</div>
             {% endfor %}
+            <div id="results"></div> <!-- errors go here -->
             <input type="submit" class="button contact_item contact_button" value="submit">
         </form>
     </div>
