@@ -1,17 +1,17 @@
-{% extends 'base.html' %}
+
 {% load wagtailcore_tags %}
 {% load static %}
 {% load wagtailimages_tags %}
 
-{% block content %}
-<div class="landing_container">
+<div class="item landing_container">
     <div class="item landing_logo">
         <div class="image"><img src="{% static 'image/circus_logo.png' %}" height="100"></div>
     </div>
-    <div class="item landing_page">
+    <div class="item landing_thanks">
         <div class="item thank_you">
             <div class="thank_you_text">{{ page.thank_you_text|richtext }}</div>
         </div>
     </div>
 </div>
-{% endblock %}
+
+
