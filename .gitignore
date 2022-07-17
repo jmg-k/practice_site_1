@@ -38,5 +38,6 @@ Thumbs.db
 
 # Directories #
 ######################
-/env
+env/
 db.sqlite3
+media/
