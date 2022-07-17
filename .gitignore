@@ -41,3 +41,4 @@ Thumbs.db
 env/
 db.sqlite3
 media/
+**/__pycache__/*
