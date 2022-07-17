@@ -39,3 +39,4 @@ Thumbs.db
 # Directories #
 ######################
 /env
+db.sqlite3
