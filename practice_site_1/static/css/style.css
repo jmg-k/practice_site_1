@@ -1,3 +1,13 @@
+@font-face 
+{
+  font-family: "Acrom - Extra Bold"; src: url("fonts/The-Northern-Block-Ltd-Acrom-ExtraBold-1.otf") format("opentype");
+
+}
+@font-face {
+  font-family: "Acrom";
+  src: url("fonts/The-Northern-Block-Ltd-Acrom-1.otf") format("opentype"); 
+}
+
 html {
   box-sizing: border-box;
 }
@@ -137,7 +147,7 @@ body {
 }
 
 .text_link {
-  font-family: acrom;
+  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;;
   /* font-weight: bold; */
   font-size: 13px;
   text-decoration: none;
@@ -160,9 +170,9 @@ h3 {
 }
 
 h2 {
-  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;
+  font-family: "Acrom - Extra Bold", Helvetica, Arial, Lucida, sans-serif;
   font-size: 50px;
-  /* margin-top: -25px; */
+  margin-top: -25px;
   margin-bottom: 15px;
   /* text-align: center; */
 }
@@ -237,7 +247,7 @@ input[type=text] {
   padding: 10px;
   width: 100%;
   height: 100%;
-  font-family: acrom;
+  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;
   font-size: 1rem;
 }
 
@@ -246,7 +256,7 @@ input[type=email] {
   padding: 10px;
   width: 100%;
   height: 100%;
-  font-family: acrom;
+  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;
   font-size: 1rem;
 }
 
@@ -255,7 +265,7 @@ textarea {
   padding: 10px;
   width: 100%;
   height: 100%;
-  font-family: acrom;
+  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;
   font-size: 1rem;
 }
 
@@ -352,7 +362,7 @@ hr.solid {
 
 .button {
   background-color: #000000;
-  font-family: acrom;
+  font-family: Acrom, Helvetica, Arial, Lucida, sans-serif;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -360,6 +370,7 @@ hr.solid {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 
