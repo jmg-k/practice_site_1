@@ -12,7 +12,7 @@
     <div class="item socials social-wrapper">
 
         {% for social in page.social_images.all %}
-        <div class="social_link"><a href="{{social.link}}">{% image social.social_image width-25 %}</a></div>
+        <div class="social_link"><a href="{{social.link}}">{% image social.social_image original class="social_pic" %}</a></div>
         {% endfor %}
 
     </div>
@@ -138,7 +138,7 @@
         </div>
     </div>
     <div class="item credits">
-        <div class="foot_txt">Website by JMGK</div>
+        <div class="foot_txt">2022 Circus Records</div>
     </div>
 </div>
 

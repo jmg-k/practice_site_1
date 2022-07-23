@@ -94,6 +94,11 @@ body {
   column-gap: 30px;
 }
 
+.social_pic {
+  width: 25px;
+  height: 25px;
+}
+
 .spotify_title {
   display: flex;
   flex-direction: column;
@@ -138,6 +143,11 @@ body {
 .artist {
   align-self: flex-start;
   border-radius: 4px;
+}
+
+.artist_image {
+  width: 100px;
+  height: 100px;
 }
 
 .dots {
@@ -520,6 +530,41 @@ hr.solid {
   .subscribe {
     grid-column: 2;
     grid-row: 4;
+  }
+
+  .artist_image {
+    width: 75px;
+    height: 75px;
+  }
+
+  h3 {
+    letter-spacing: 2px;
+    margin-bottom: -90px;
+    margin-top: 75px;
+    font-size: 15px;
+
+  }
+  
+  h2 {
+    font-size: 30px;
+    margin-top: 90px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  h3 {
+    letter-spacing: 2px;
+    margin-bottom: -90px;
+    margin-top: 75px;
+    font-size: 15px;
+
+  }
+  
+  h2 {
+    font-size: 25px;
+    margin-top: 90px;
   }
 
 }
