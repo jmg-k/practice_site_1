@@ -35,7 +35,7 @@
     <div class="item dropdown-wrapper">
 
         <div class="item dropdown-menu">
-            <div onclick="menuAni(this); dropDown()" class="dropbtn">
+            <div onclick="menuAni(this); dropDown()" class="dropbtn" id="drop_button">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -126,7 +126,7 @@
             <div class="foot_title">FOLLOW</div>
             <div class="item foot_social_wrapper">
                 {% for social in page.social_images.all %}
-                <div class="social_link"><a href="{{social.link}}">{% image social.social_image width-25 %}</a></div>
+                <div class="social_link"><a href="{{social.link}}">{% image social.social_image original class="social_pic" %}</a></div>
                 {% endfor %}
             </div>
             <div class="store_item"><a class="store_link" href="https://circus-records.myshopify.com/">US STORE</a></div>
