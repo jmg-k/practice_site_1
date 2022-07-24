@@ -4,6 +4,8 @@ from .base import *
 
 DEBUG = False
 
+ALLOWED_HOSTS = ['circus-records.co.uk', 'www.circus-records.co.uk']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
