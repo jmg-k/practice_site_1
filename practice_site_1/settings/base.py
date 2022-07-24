@@ -169,7 +169,7 @@ MEDIA_URL = "/media/"
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "practice_site_1"
+WAGTAIL_SITE_NAME = "Circus Records"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
