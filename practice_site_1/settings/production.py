@@ -5,6 +5,8 @@ from .base import *
 DEBUG = False
 
 ALLOWED_HOSTS = ['circus-records.co.uk', 'www.circus-records.co.uk']
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+
 
 DATABASES = {
     'default': {
